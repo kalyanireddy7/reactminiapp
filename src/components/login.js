@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
+import { Redirect } from 'react-router-dom';
+import {Link} from "react-router-dom"
 
 
 
 export const Login=()=>{
  
     function onHandleSubmit(event){
-        event.preventDefault()
+        event.preventDefault();
+        <Redirect to="/home" />;
     }
     const schema=yup.object().shape({
         email:yup.string().email().required(),
@@ -18,7 +21,7 @@ export const Login=()=>{
     });
     
     return(
-        
+     <Link to="/login">
        
      <div>
             <h1>Login Form</h1>
@@ -30,6 +33,7 @@ export const Login=()=>{
             <input type="submit"/>
         </form>
     </div>
+    </Link>
       
         
     )

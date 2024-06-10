@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 import {
     Box,
     Card,
@@ -6,8 +6,8 @@ import {
     Typography
     
   } from '@mui/material'
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
   
   export const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -25,6 +25,7 @@ import axios from 'axios';
     fetchData();
   }, []);
     return (
+      <Link to="/home">
     <div>
       {posts.map((post)=>(
         <Box width='300px'>
@@ -41,6 +42,7 @@ import axios from 'axios';
       </Box>
       ))}
       </div>
+      </Link>
       
     )
   }
