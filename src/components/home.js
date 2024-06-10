@@ -3,7 +3,8 @@ import {
     Box,
     Card,
     CardContent,
-    Typography
+    Typography,
+    Stack
     
   } from '@mui/material'
 import React, { useState, useEffect } from 'react'
@@ -25,9 +26,10 @@ import axios from 'axios'
     fetchData();
   }, []);
     return (
-      <Link to="/home">
-    <div>
+    <Link to="/home">
+     <div>
       {posts.map((post)=>(
+        <Stack spacing={2}>
         <Box width='300px'>
         <Card>
           <CardContent>
@@ -40,10 +42,13 @@ import axios from 'axios'
           </CardContent>
         </Card>
       </Box>
+      </Stack>
       ))}
-      </div>
-      </Link>
+     </div>
+    </Link>
       
     )
   }
-   
+    
+
+    

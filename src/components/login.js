@@ -1,16 +1,16 @@
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import {yupResolver} from "@hookform/resolvers/yup"
-import { Redirect } from 'react-router-dom';
-import {Link} from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 
 
 export const Login=()=>{
  
+    let history=useHistory();
     function onHandleSubmit(event){
         event.preventDefault();
-        <Redirect to="/home" />;
+        history.push('/home')
     }
     const schema=yup.object().shape({
         email:yup.string().email().required(),
@@ -21,9 +21,8 @@ export const Login=()=>{
     });
     
     return(
-     <Link to="/login">
-       
-     <div>
+   
+       <div>
             <h1>Login Form</h1>
         <form onSubmit={onHandleSubmit} >
             <input type="text" placeholder="Enter your email..." {...register("email")}/>
@@ -32,10 +31,12 @@ export const Login=()=>{
             <p>{errors.password?.message}</p>
             <input type="submit"/>
         </form>
-    </div>
-    </Link>
+       </div>
+  
       
         
     )
 }
+
+
 
