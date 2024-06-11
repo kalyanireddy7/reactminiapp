@@ -6,8 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    
-   <BrowserRouter>
+    <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/home" component={Home} />

@@ -4,9 +4,7 @@ import {
     Card,
     CardContent,
     Typography,
-    Stack
-    
-  } from '@mui/material'
+    } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
   
@@ -29,9 +27,8 @@ import axios from 'axios'
     <Link to="/home">
      <div>
       {posts.map((post)=>(
-        <Stack spacing={2}>
-        <Box width='300px'>
-        <Card>
+        <Box width='300px'  sx={{ m: 2 }}>
+        <Card variant="outlined">
           <CardContent>
             <Typography gutterBottom variant='h5' component='div'>
               {post.id}
@@ -42,7 +39,6 @@ import axios from 'axios'
           </CardContent>
         </Card>
       </Box>
-      </Stack>
       ))}
      </div>
     </Link>
